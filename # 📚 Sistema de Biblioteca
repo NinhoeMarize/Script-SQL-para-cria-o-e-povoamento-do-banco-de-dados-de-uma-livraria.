@@ -1,5 +1,11 @@
 # 📚 Sistema de Biblioteca
 
+## 👨‍💻 Autor
+
+João Paulo Chaar Avila
+
+Usuários Biblioteca Pública 	id	nome	email 2     joão    joaop381@gmail  3
+
 Este repositório contém a modelagem e criação de um banco de dados relacional para controle de empréstimos de livros em uma biblioteca.
 
 ## 🔧 Estrutura do Banco
@@ -17,11 +23,6 @@ Tabelas criadas:
 2. Importe o script `banco_biblioteca.sql` em um SGBD como MySQL.
 3. Execute para criar as tabelas e registros.
 
-## 👨‍💻 Autor
-
-João Paulo Chaar Avila
-
-Usuários Biblioteca Pública 	id	nome	email 2     joão    joaop381@gmail  3
 
 
 create table livros	CREATE TABLE Livros (
@@ -74,6 +75,10 @@ INSERT INTO Emprestimo_Livros (id_emprestimo, id_livro) VALUES
 (2, 2),
 (3, 3);
 
+
+
+git commit -m "Criação do script SQL com tabelas: Usuarios, Funcionarios, Livros, Emprestimos e Emprestimo_Livros"
+git commit -m "Inserção de dados de exemplo"
+git commit -m "Adição de chaves estrangeiras e correções"
+
 https://github.com/NinhoeMarize/Script-SQL-para-cria-o-e-povoamento-do-banco-de-dados-de-uma-livraria./new/main
-
-
