@@ -1,0 +1,79 @@
+# 📚 Sistema de Biblioteca
+
+Este repositório contém a modelagem e criação de um banco de dados relacional para controle de empréstimos de livros em uma biblioteca.
+
+## 🔧 Estrutura do Banco
+
+Tabelas criadas:
+- **Usuarios**: guarda informações dos leitores.
+- **Funcionarios**: quem realiza os empréstimos.
+- **Livros**: acervo disponível.
+- **Emprestimos**: registros dos empréstimos realizados.
+- **Emprestimo_Livros**: associação entre empréstimos e livros.
+
+## 📂 Como usar
+
+1. Clone este repositório.
+2. Importe o script `banco_biblioteca.sql` em um SGBD como MySQL.
+3. Execute para criar as tabelas e registros.
+
+## 👨‍💻 Autor
+
+João Paulo Chaar Avila
+
+Usuários Biblioteca Pública 	id	nome	email 2     joão    joaop381@gmail  3
+
+
+create table livros	CREATE TABLE Livros (
+    id INT PRIMARY KEY,
+    titulo VARCHAR(150),
+    autor VARCHAR(100),
+    ano INT
+);
+
+Funcionarios 
+	INSERT INTO Funcionarios (id, nome) VALUES
+(1, 'Fernanda Costa'),
+(2, 'Ricardo Mendes'),
+(3, 'Ana Paula');
+
+
+     Livros  	id int primary key titulo (Dom Casmurro)   Autor VARCHAR(Machado de Assis)   Ano  int (1899)
+
+create emprestimos	
+CREATE TABLE Emprestimos (
+    id INT PRIMARY KEY,
+    id_usuario INT,
+    id_funcionario INT,
+    data DATE,
+    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id),
+    FOREIGN KEY (id_funcionario) REFERENCES Funcionarios(id)
+
+INSERT INTO Usuarios (id, nome, email) VALUES
+(1, 'João Silva', 'joao@email.com'),
+(2, 'Maria Lima', 'maria@email.com'),
+(3, 'Carlos Souza', 'carlos@email.com');
+
+INSERT INTO Funcionarios (id, nome) VALUES
+(1, 'Fernanda Costa'),
+(2, 'Ricardo Mendes'),
+(3, 'Ana Paula');
+
+INSERT INTO Livros (id, titulo, autor, ano) VALUES
+(1, 'Dom Casmurro', 'Machado de Assis', 1899),
+(2, 'O Cortiço', 'Aluísio Azevedo', 1890),
+(3, 'Capitães da Areia', 'Jorge Amado', 1937);
+
+INSERT INTO Emprestimos (id, id_usuario, id_funcionario, data) VALUES
+(1, 1, 1, '2025-04-20'),
+(2, 2, 2, '2025-04-21'),
+(3, 3, 3, '2025-04-22');
+
+INSERT INTO Emprestimo_Livros (id_emprestimo, id_livro) VALUES
+(1, 1),
+(2, 2),
+(3, 3);
+
+https://github.com/NinhoeMarize/Script-SQL-para-cria-o-e-povoamento-do-banco-de-dados-de-uma-livraria./new/main
+
+
