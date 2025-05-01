@@ -1,0 +1,95 @@
+Relatório do Projeto – Módulo 3
+Aluno: João Paulo Chaar Avila
+Curso: [Curso Superior de Tecnólogia em Ciência de Dados ]
+Módulo: 3
+1. Tema do Sistema
+Sistema de Cadastro de Doadores de Alimentos.
+2. Modelagem de Dados
+O sistema possui as seguintes entidades e relacionamentos:
+- Doadores
+- Doações
+- Produtos
+- Destinatários
+Relacionamentos:
+- Um Doador realiza muitas Doações
+- Uma Doação contém vários Produtos
+- Uma Doação é destinada a um Destinatário
+ 
+3. Implementação do Banco de Dados
+Criação de tabelas, inserções, atualizações e consultas em SQL:
+
+CREATE TABLE Doadores (
+  id INT PRIMARY KEY,
+  nome VARCHAR(100) NOT NULL,
+  email VARCHAR(100)
+);
+
+CREATE TABLE Doacoes (
+  id INT PRIMARY KEY,
+  data DATE,
+  id_doador INT,
+  FOREIGN KEY (id_doador) REFERENCES Doadores(id)
+);
+
+INSERT INTO Doadores (id, nome, email) VALUES (1, 'João Silva', 'joao@email.com');
+INSERT INTO Doacoes (id, data, id_doador) VALUES (1, '2025-04-30', 1);
+
+UPDATE Doadores SET email = 'novo@email.com' WHERE id = 1;
+DELETE FROM Doacoes WHERE id = 1;
+
+SELECT * FROM Doadores;
+SELECT d.nome, o.data FROM Doadores d JOIN Doacoes o ON d.id = o.id_doador;
+
+4. Controle de Versão
+O código foi versionado com Git e publicado no GitHub.
+Link do repositório: https://github.com/SEU_USUARIO/projeto-banco-dados-modulo3
+Foram feitos commits frequentes com mensagens explicativas, organizando os arquivos por etapas do desenvolvimento.
+5. Conclusão
+O projeto permitiu aplicar conhecimentos em modelagem, SQL e versionamento de código. Foi possível estruturar um sistema funcional e acompanhar sua evolução usando Git e GitHub.
+
+Recife - Pe, 30 de April de 2025
+
+-- Criação das tabelas
+CREATE TABLE produtos (
+  id INT PRIMARY KEY,
+  nome VARCHAR(100),
+  preco DECIMAL(10,2),
+  estoque INT
+);
+
+CREATE TABLE pedidos (
+  id INT PRIMARY KEY,
+  produto_id INT,
+  quantidade INT,
+  data_pedido DATE,
+  FOREIGN KEY (produto_id) REFERENCES produtos(id)
+);
+
+-- Inserção de dados em 'produtos'
+INSERT INTO produtos (id, nome, preco, estoque) VALUES
+(1, 'A Arte da Guerra', 29.90, 10),
+(2, 'Dom Casmurro', 34.50, 8),
+(3, '1984', 39.99, 5);
+
+-- Inserção de dados em 'pedidos'
+INSERT INTO pedidos (id, produto_id, quantidade, data_pedido) VALUES
+(1, 1, 2, '2025-04-25'),
+(2, 2, 1, '2025-04-26'),
+(3, 3, 3, '2025-04-27');
+
+5. Conclusão
+Esta atividade me ajudou a praticar:
+
+Criação e relacionamento de tabelas com SQL
+
+Inserção de dados em tabelas relacionais
+
+Uso de controle de versão com Git
+
+Criação e publicação de repositório no GitHub
+
+https://github.com/NinhoeMarize/Script-SQL-para-cria-o-e-povoamento-do-banco-de-dados-de-uma-livraria./new/main
+
+
+
+
